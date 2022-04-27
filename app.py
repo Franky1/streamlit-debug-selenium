@@ -17,7 +17,7 @@ class Helper():
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         s = Service('C:/Users/.../chromedriver.exe')
-        browser = webdriver.Chrome(service = s,chrome_options())
+        browser = webdriver.Chrome(service = s,chrome_options=chrome_options)
 
     def spell_check(self,input_term):
         self.suggestion = input_term
@@ -36,7 +36,7 @@ def get_browser():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     s = Service('C:/Users/.../chromedriver.exe')
-    browser = webdriver.Chrome(service = s,chrome_options())
+    browser = webdriver.Chrome(service = s,chrome_options=chrome_options)
     return browser
 
 
