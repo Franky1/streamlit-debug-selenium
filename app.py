@@ -2,6 +2,7 @@ import bs4 as bs
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import streamlit as st
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Helper():
@@ -14,7 +15,7 @@ class Helper():
         self.API_URL = "https://api-inference.huggingface.co/models/deepset/roberta-base-squad2"
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        browser = webdriver.Chrome("/usr/local/bin/chromium-driver",chrome_options=chrome_options)
+        browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_options)
 
     def spell_check(self,input_term):
         self.suggestion = input_term
@@ -32,7 +33,7 @@ class Helper():
 def get_browser():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    browser = webdriver.Chrome("/usr/local/bin/chromium-driver",chrome_options=chrome_options)
+    browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_options)
     return browser
 
 
