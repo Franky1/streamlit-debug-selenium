@@ -16,7 +16,7 @@ class Helper():
         self.API_URL = "https://api-inference.huggingface.co/models/deepset/roberta-base-squad2"
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        s = Service('C:/Users/.../chromedriver.exe')
+        s = Service('/usr/local/bin/chromedriver')
         browser = webdriver.Chrome(service = s,chrome_options=chrome_options)
 
     def spell_check(self,input_term):
@@ -35,7 +35,7 @@ class Helper():
 def get_browser():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    s = Service('C:/Users/.../chromedriver.exe')
+    s = Service('/usr/local/bin/chromedriver')
     browser = webdriver.Chrome(service = s,chrome_options=chrome_options)
     return browser
 
