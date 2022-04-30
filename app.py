@@ -30,7 +30,8 @@ class Helper():
         browser.close()
         soup = bs.BeautifulSoup(html_source, "html")
         text = soup.find('span',class_='hgKElc').text
-        return text
+        source = soup.find('cite',class_='iUh30 qLRx3b tjvcx').text.split(' ')[0]
+        return text,source
     
 def get_browser():
     chrome_options = Options()
@@ -48,10 +49,11 @@ if st.button('Ask'):
     browser = get_browser()
     helper = Helper()
     helper.spell_check(input_term)
-    snippet = helper.get_snippet()
+    snippet, source = helper.get_snippet()
 else:
-    snippet = ''
+    snippet, source = ''
 
 st.header( 'Answer' )
 
 st.markdown( snippet )
+st.markdown( source )
