@@ -51,7 +51,7 @@ if st.button('Ask'):
     helper.spell_check(input_term)
     snippet, source = helper.get_snippet()
 else:
-    snippet, source = ''
+    snippet, source = '',''
 
 st.header( 'Answer' )
 
